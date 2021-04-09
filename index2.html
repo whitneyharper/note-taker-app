@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="index.css">
+    <script src="app.js"></script>
+</head>
+<body>
+<div class="second-page">
+    <ol id="notes-list">
+
+    </ol>
+</div>
+<a href="index.html"><h3>Back</h3></a>
+<script>
+(function getNotes() {
+let notes = getExistingNotes()
+let arrayOfNotes = Object.values(notes)
+let notesList = document.querySelector('#notes-list')
+arrayOfNotes.forEach( function(note){
+    let listItem = document.createElement('li')
+    listItem.innerHTML = note;
+    notesList.appendChild(listItem)
+})
+})()
+
+</script>
+</body>
+</html>
